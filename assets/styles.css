@@ -178,6 +178,7 @@ body.modal-open { overflow: hidden; }
 
 /* Booking */
 .book { background: var(--bg-2); }
+.opens-note { margin: -12px 0 20px; padding: 14px 16px; border-left: 2px solid var(--ink); background: var(--surface); font-weight: 600; }
 .schedule { background: var(--surface); border: 1px solid var(--line); padding: 20px; scroll-margin-top: 96px; }
 .state { margin: 28px 8px; text-align: center; color: var(--ink-2); font-family: var(--mono); font-size: 13px; }
 

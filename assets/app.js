@@ -42,6 +42,7 @@
         if (!data.ok) throw new Error();
         days = data.days || [];
         if (!days.length) { state('No times are open right now. Check back soon.'); return; }
+        showOpensNote(new Date(days[0].slots[0].start));
         var firstOpen = days.find(function (d) { return d.slots.some(function (s) { return s.available; }); });
         if (!activeDate || !days.some(function (d) { return d.date === activeDate; })) {
           activeDate = (firstOpen || days[0]).date;
@@ -49,6 +50,21 @@
         render();
       })
       .catch(function () { state('The schedule could not load. Refresh the page to try again.'); });
+  }
+
+  // When the first bookable day is more than a week out, say so up front.
+  function showOpensNote(first) {
+    var note = document.getElementById('opens-note');
+    if (first.getTime() - Date.now() < 7 * 86400000) { note.hidden = true; return; }
+    note.textContent = '';
+    note.appendChild(document.createTextNode('Online booking opens ' + longFmt.format(first) + '. Need us sooner? Call or text '));
+    var a = document.createElement('a');
+    a.className = 'link';
+    a.href = 'tel:+15177592607';
+    a.textContent = '517-759-2607';
+    note.appendChild(a);
+    note.appendChild(document.createTextNode('.'));
+    note.hidden = false;
   }
 
   function render() {
