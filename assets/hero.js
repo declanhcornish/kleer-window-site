@@ -23,6 +23,20 @@
     }
   }
 
+  // Privacy-friendly visit count: one ping per browser session, referring site name only, no cookies.
+  try {
+    if (window.KLEER_BOOKING_URL && !sessionStorage.getItem('kw-v')) {
+      sessionStorage.setItem('kw-v', '1');
+      var ref = '';
+      try { ref = document.referrer ? new URL(document.referrer).hostname.replace(/^www\./, '') : ''; } catch (e) {}
+      if (ref === location.hostname) ref = '';
+      var payload = JSON.stringify({ type: 'visit', ref: ref });
+      if (!navigator.sendBeacon || !navigator.sendBeacon(window.KLEER_BOOKING_URL, new Blob([payload], { type: 'text/plain' }))) {
+        fetch(window.KLEER_BOOKING_URL, { method: 'POST', headers: { 'Content-Type': 'text/plain;charset=utf-8' }, body: payload, keepalive: true }).catch(function () {});
+      }
+    }
+  } catch (e) {}
+
   // Solid nav once the hero is scrolled past.
   var nav = document.getElementById('nav');
   var hero = document.querySelector('.hero');

@@ -260,6 +260,19 @@ textarea { resize: vertical; }
 .hero-contact { margin: 20px 0 0; font-size: 15px; color: rgba(238, 240, 242, .75); }
 .hero-contact a { color: var(--ink); font-weight: 700; text-decoration: underline; text-underline-offset: 3px; text-decoration-color: rgba(238, 240, 242, .4); }
 
+.faq-list { border-top: 1px solid var(--line); }
+.faq-list details { border-bottom: 1px solid var(--line); }
+.faq-list summary {
+  display: flex; justify-content: space-between; align-items: center; gap: 24px;
+  padding: 24px 0; cursor: pointer; list-style: none;
+  font-size: clamp(18px, 2vw, 22px); font-weight: 700;
+}
+.faq-list summary::-webkit-details-marker { display: none; }
+.faq-list summary::after { content: '+'; font-family: var(--mono); font-size: 22px; font-weight: 400; color: var(--ink-2); transition: transform .2s; }
+.faq-list details[open] summary::after { transform: rotate(45deg); }
+.faq-list summary:hover::after { color: var(--ink); }
+.faq-list details p { margin: -8px 0 24px; max-width: 680px; color: var(--ink-2); }
+
 .contact-grid { display: grid; grid-template-columns: 1.2fr 1fr 1fr; border: 1px solid var(--line); }
 .contact-who { padding: 32px; }
 .contact-who .mono { margin: 0 0 10px; }
