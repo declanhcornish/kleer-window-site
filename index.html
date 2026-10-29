@@ -11,7 +11,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
   <link rel="preload" as="image" href="assets/media/hero-poster.jpg">
-  <link rel="stylesheet" href="assets/styles.css?v=20261029">
+  <link rel="stylesheet" href="assets/styles.css?v=20261029b">
 </head>
 <body>
   <header class="nav" id="nav">
@@ -185,7 +185,7 @@
             <label class="full">Street address<input name="address" autocomplete="address-line1" required maxlength="160"></label>
             <label>City<input name="city" autocomplete="address-level2" required maxlength="60"></label>
             <label>ZIP code<input name="zip" autocomplete="postal-code" inputmode="numeric" required maxlength="10" pattern="\d{5}(-\d{4})?"></label>
-            <label class="full"><span>Email <span class="opt">(optional)</span></span><input name="email" type="email" autocomplete="email" maxlength="120"></label>
+            <label class="full"><span>Email <span class="opt">(required, we'll send your confirmation here)</span></span><input name="email" type="email" autocomplete="email" required maxlength="120"></label>
             <label class="full"><span>Anything we should know? <span class="opt">(optional)</span></span><textarea name="notes" rows="3" maxlength="600" placeholder="Number of windows, gate code, screens, pets"></textarea></label>
             <label class="hp" aria-hidden="true">Website<input name="website" tabindex="-1" autocomplete="off"></label>
           </div>
@@ -198,6 +198,7 @@
           <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m7.5 12.5 3 3 6-6.5"/></svg>
           <h3>You're on the schedule</h3>
           <p id="done-label"></p>
+          <p class="sub" id="done-email"></p>
           <p class="sub">We'll reach out at the number you gave us before the visit. Need to change something? Call or text <a class="link" href="tel:+15177592607">517-759-2607</a>.</p>
         </div>
       </div>
@@ -288,9 +289,9 @@
     </div>
   </footer>
 
-  <script src="assets/config.js?v=20261029"></script>
-  <script src="assets/hero.js?v=20261029"></script>
-  <script src="assets/app.js?v=20261029"></script>
-  <script src="assets/quote.js?v=20261029"></script>
+  <script src="assets/config.js?v=20261029b"></script>
+  <script src="assets/hero.js?v=20261029b"></script>
+  <script src="assets/app.js?v=20261029b"></script>
+  <script src="assets/quote.js?v=20261029b"></script>
 </body>
 </html>

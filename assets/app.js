@@ -106,6 +106,8 @@
     form.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
 
+  form.querySelector('input[name="email"]').addEventListener('input', function () { this.classList.remove('invalid'); });
+
   // "Book Gold" etc. preselect that package and jump to the schedule.
   [].forEach.call(document.querySelectorAll('[data-tier]'), function (btn) {
     btn.addEventListener('click', function () {
@@ -132,8 +134,16 @@
       : !body.address ? 'Enter the street address.'
       : !body.city ? 'Enter your city.'
       : !/^\d{5}(-\d{4})?$/.test(body.zip) ? 'Enter a 5 digit ZIP code.'
+      : !body.email ? 'Error: email is required to book. Enter your email so we can send your confirmation.'
+      : !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(body.email) ? 'Error: that email address doesn\'t look right. Check it and try again.'
       : !body.start ? 'Pick a time above.' : '';
-    if (missing) { showError(missing); return; }
+    var emailInput = form.querySelector('input[name="email"]');
+    emailInput.classList.toggle('invalid', /^Error: (email|that email)/.test(missing));
+    if (missing) {
+      showError(missing);
+      if (emailInput.classList.contains('invalid')) emailInput.focus();
+      return;
+    }
 
     submitBtn.disabled = true;
     submitBtn.textContent = 'Booking...';
@@ -146,6 +156,9 @@
         scheduleEl.hidden = true;
         document.getElementById('tz-note').hidden = true;
         document.getElementById('done-label').textContent = label(picked);
+        document.getElementById('done-email').textContent = res.emailed === false
+          ? "We couldn't send the confirmation email, but your booking is saved."
+          : 'A confirmation is on its way to ' + body.email + '.';
         doneEl.hidden = false;
         doneEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
       })
