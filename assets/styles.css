@@ -274,6 +274,33 @@ textarea { resize: vertical; }
 .faq-list summary:hover::after { color: var(--ink); }
 .faq-list details p { margin: -8px 0 24px; max-width: 680px; color: var(--ink-2); }
 
+/* Account page */
+.account { min-height: calc(100vh - 160px); padding-top: 140px; border-top: 0; }
+.acct-intro { margin: -24px 0 28px; max-width: 560px; }
+.acct-tabs { display: flex; gap: 0; border: 1px solid var(--line); width: max-content; max-width: 100%; }
+.acct-tab {
+  padding: 12px 18px; background: transparent; color: var(--ink-2); border: 0;
+  font: 600 13px var(--mono); letter-spacing: .08em; text-transform: uppercase; cursor: pointer;
+}
+.acct-tab + .acct-tab { border-left: 1px solid var(--line); }
+.acct-tab.active { background: var(--ink); color: var(--accent-ink); }
+.acct-form { max-width: 640px; }
+.acct-tabs + .acct-form { margin-top: 0; border-top: 0; }
+#acct-sent { max-width: 640px; }
+.dash-head { flex-wrap: wrap; }
+.dash-out { margin-left: auto; font-size: 14px; }
+.dash-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 48px; }
+.dash-block { margin-bottom: 48px; max-width: 760px; }
+.dash-block > .mono { margin: 0 0 12px; }
+.dash-block .acct-form { margin-top: 0; }
+.visit-list { border-top: 1px solid var(--line); }
+.visit { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; flex-wrap: wrap; padding: 18px 0; border-bottom: 1px solid var(--line); }
+.visit-when { font-weight: 700; font-size: 17px; }
+.visit.upcoming .visit-when::before { content: ''; display: inline-block; width: 8px; height: 8px; margin-right: 10px; border-radius: 50%; background: #7ee2a8; vertical-align: middle; }
+.visit-meta { color: var(--ink-2); font-size: 15px; }
+.visit-empty { margin: 0; padding: 18px 0; color: var(--ink-2); border-bottom: 1px solid var(--line); }
+.saved { color: #7ee2a8; font-weight: 600; margin: 16px 0 0; }
+
 .contact-grid { display: grid; grid-template-columns: 1.2fr 1fr 1fr; border: 1px solid var(--line); }
 .contact-who { padding: 32px; }
 .contact-who .mono { margin: 0 0 10px; }

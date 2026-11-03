@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Your Account | Kleer Window</title>
+  <meta name="description" content="Sign in to your Kleer Window account to see past and upcoming window cleanings.">
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#161719">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect x='1' y='1' width='30' height='30' rx='4' fill='%23161719' stroke='%23f1f2f4' stroke-width='2.5'/%3E%3Ctext x='16' y='22.5' text-anchor='middle' font-family='Arial,sans-serif' font-weight='800' font-size='19' fill='%23f1f2f4'%3EK%3C/text%3E%3C/svg%3E">
+  <link rel="apple-touch-icon" href="assets/media/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/styles.css?v=20261102a">
+</head>
+<body class="account-page">
+  <header class="nav solid">
+    <div class="wrap nav-inner">
+      <a class="brand" href="./" aria-label="Kleer Window home">
+        <svg viewBox="0 0 32 32" aria-hidden="true"><rect class="box" x="2.5" y="2.5" width="27" height="27" rx="3"/><text class="k" x="16" y="16" text-anchor="middle" dominant-baseline="central">K</text></svg>
+        <span>Kleer Window</span>
+      </a>
+      <nav class="nav-links">
+        <a class="nav-phone" href="tel:+15177592607" aria-label="Call 517-759-2607">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h3l2 5-2.5 1.5a11 11 0 0 0 6 6L15 14l5 2v3a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg>
+          <span>517-759-2607</span>
+        </a>
+        <a class="nav-cta" href="./#book">Book</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="section account">
+    <div class="wrap">
+      <p class="state" id="acct-loading">Loading your account...</p>
+
+      <!-- Sign up / sign in -->
+      <div id="acct-auth" hidden>
+        <header class="sec-head">
+          <h2>Your account</h2>
+        </header>
+        <p class="sub acct-intro">See every past and upcoming visit in one place, and book again without retyping your details. No password: we email you a sign-in link.</p>
+
+        <div class="acct-tabs" role="tablist">
+          <button type="button" role="tab" class="acct-tab active" data-tab="signup" aria-selected="true">Create account</button>
+          <button type="button" role="tab" class="acct-tab" data-tab="login" aria-selected="false">Sign in</button>
+        </div>
+
+        <form id="signup-form" class="booking acct-form" novalidate>
+          <div class="grid">
+            <label>Name<input name="name" autocomplete="name" required maxlength="80"></label>
+            <label>Phone<input name="phone" type="tel" autocomplete="tel" required maxlength="30"></label>
+            <label class="full">Email<input name="email" type="email" autocomplete="email" required maxlength="120"></label>
+            <label class="full"><span>Street address <span class="opt">(optional)</span></span><input name="address" autocomplete="address-line1" maxlength="160"></label>
+            <label><span>City <span class="opt">(optional)</span></span><input name="city" autocomplete="address-level2" maxlength="60"></label>
+            <label><span>ZIP code <span class="opt">(optional)</span></span><input name="zip" autocomplete="postal-code" inputmode="numeric" maxlength="10"></label>
+            <label class="hp" aria-hidden="true">Website<input name="website" tabindex="-1" autocomplete="off"></label>
+          </div>
+          <p class="error" role="alert" hidden></p>
+          <button class="btn btn-block" type="submit">Create my account</button>
+        </form>
+
+        <form id="login-form" class="booking acct-form" novalidate hidden>
+          <div class="grid">
+            <label class="full">Email<input name="email" type="email" autocomplete="email" required maxlength="120"></label>
+          </div>
+          <p class="error" role="alert" hidden></p>
+          <button class="btn btn-block" type="submit">Email me a sign-in link</button>
+        </form>
+      </div>
+
+      <!-- Link sent -->
+      <div id="acct-sent" class="done" hidden>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+        <h3>Check your email</h3>
+        <p class="sub" id="acct-sent-text"></p>
+        <button type="button" class="link" id="acct-back">Use a different email</button>
+      </div>
+
+      <!-- Dashboard -->
+      <div id="acct-dash" hidden>
+        <header class="sec-head dash-head">
+          <h2 id="dash-hello">Hi</h2>
+          <button type="button" class="link dash-out" id="acct-signout">Sign out</button>
+        </header>
+
+        <div class="dash-actions">
+          <a class="btn" href="./#book">Book a cleaning <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <a class="btn btn-ghost" href="./#services">Get a quote</a>
+        </div>
+
+        <section class="dash-block">
+          <p class="mono">Upcoming</p>
+          <div id="dash-upcoming" class="visit-list"></div>
+        </section>
+
+        <section class="dash-block">
+          <p class="mono">Past visits</p>
+          <div id="dash-past" class="visit-list"></div>
+        </section>
+
+        <section class="dash-block">
+          <p class="mono">Your details</p>
+          <form id="profile-form" class="booking acct-form" novalidate>
+            <div class="grid">
+              <label>Name<input name="name" autocomplete="name" maxlength="80"></label>
+              <label>Phone<input name="phone" type="tel" autocomplete="tel" maxlength="30"></label>
+              <label class="full">Email<input name="email" type="email" disabled></label>
+              <label class="full">Street address<input name="address" autocomplete="address-line1" maxlength="160"></label>
+              <label>City<input name="city" autocomplete="address-level2" maxlength="60"></label>
+              <label>ZIP code<input name="zip" autocomplete="postal-code" inputmode="numeric" maxlength="10"></label>
+            </div>
+            <p class="error" role="alert" hidden></p>
+            <p class="saved" hidden>Saved.</p>
+            <button class="btn btn-block" type="submit">Save my details</button>
+          </form>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <footer class="foot">
+    <div class="wrap foot-inner">
+      <div>
+        <span class="foot-mark">Kleer Window</span>
+        <p class="mono foot-sub">Window cleaning / Declan Cornish</p>
+      </div>
+      <div class="foot-contact">
+        <a href="tel:+15177592607">517-759-2607</a>
+        <a href="mailto:kleer1window@gmail.com">kleer1window@gmail.com</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/config.js?v=20261102a"></script>
+  <script src="assets/account.js?v=20261102a"></script>
+</body>
+</html>

@@ -124,6 +124,14 @@
 
   form.querySelector('input[name="email"]').addEventListener('input', function () { this.classList.remove('invalid'); });
 
+  // Signed-in customers (see account.js) get their saved details filled in.
+  try {
+    var saved = JSON.parse(localStorage.getItem('kw-profile') || 'null');
+    if (saved) ['name', 'phone', 'email', 'address', 'city', 'zip'].forEach(function (k) {
+      if (saved[k] && form[k] && !form[k].value) form[k].value = saved[k];
+    });
+  } catch (e) {}
+
   // "Book Gold" etc. preselect that package and jump to the schedule.
   [].forEach.call(document.querySelectorAll('[data-tier]'), function (btn) {
     btn.addEventListener('click', function () {
