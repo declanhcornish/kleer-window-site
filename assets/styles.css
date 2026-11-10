@@ -310,6 +310,21 @@ textarea { resize: vertical; }
 .visit-when { font-weight: 700; font-size: 17px; }
 .visit.upcoming .visit-when::before { content: ''; display: inline-block; width: 8px; height: 8px; margin-right: 10px; border-radius: 50%; background: #7ee2a8; vertical-align: middle; }
 .visit-meta { color: var(--ink-2); font-size: 15px; }
+.visit-change, .visit-note { flex-basis: 100%; }
+.visit-note { margin: 0; color: var(--ink-2); font-size: 15px; }
+.visit-note a { color: var(--ink); font-weight: 700; }
+.visit-actions { display: flex; flex-wrap: wrap; gap: 10px; }
+.visit-actions .btn { min-height: 48px; font-size: 15px; }
+.visit-panel { margin-top: 16px; padding: 20px; background: var(--surface); border: 1px solid var(--line); }
+.visit-panel > * + * { margin-top: 14px; }
+.visit-ask { display: block; margin: 0; font-size: 17px; font-weight: 600; }
+.visit-select { display: block; width: 100%; max-width: 420px; margin-top: 10px; min-height: 52px; padding: 0 14px; font: 600 17px var(--display); color: var(--ink); background: var(--bg); border: 1.5px solid var(--line); border-radius: 8px; }
+.visit-times { display: flex; flex-wrap: wrap; gap: 10px; }
+.visit-time { min-height: 52px; min-width: 120px; padding: 0 18px; font: 700 17px var(--display); color: var(--ink); background: var(--bg); border: 1.5px solid var(--line); border-radius: 8px; cursor: pointer; }
+.visit-time:hover { border-color: var(--ink-2); }
+.visit-time[aria-pressed="true"] { background: var(--ink); color: var(--accent-ink); border-color: var(--ink); }
+.visit-change .error { margin: 12px 0 0; }
+.dash-flash { margin: 0 0 28px; padding: 16px 18px; border: 1px solid #7ee2a8; color: var(--ink); font-size: 17px; }
 .visit-empty { margin: 0; padding: 18px 0; color: var(--ink-2); border-bottom: 1px solid var(--line); }
 .saved { color: #7ee2a8; font-weight: 600; margin: 16px 0 0; }
 
