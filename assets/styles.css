@@ -144,6 +144,11 @@ h2 { margin: 0; font-size: clamp(40px, 6vw, 80px); line-height: .9; font-weight:
 }
 .tier-btn-line:hover { background: var(--ink); color: var(--accent-ink); border-color: var(--ink); }
 
+.tier-extra { grid-column: 1 / -1; display: grid; grid-template-columns: 1fr 1.2fr auto; gap: 40px; align-items: center; padding: 32px 40px; border-left: 0; border-top: 1px solid var(--line); }
+.tier-extra .mono { margin: 0 0 10px; }
+.tier-extra .tier-sum { margin: 0; }
+.tier-extra .tier-list { margin: 0; }
+.tier-extra .tier-list li:first-child { border-top: 0; }
 .tier-top {
   grid-column: 1 / -1; display: grid; grid-template-columns: 1fr 1.2fr auto; gap: 40px; align-items: center;
   padding: 40px; border-left: 0; border-bottom: 1px solid var(--line); background: var(--ink); color: var(--accent-ink);
@@ -356,6 +361,7 @@ textarea { resize: vertical; }
   .contact-who { grid-column: 1 / -1; border-bottom: 1px solid var(--line); }
   .contact-card:first-of-type { border-left: 0; }
   .tier-top { grid-template-columns: 1fr; gap: 24px; }
+  .tier-extra { grid-template-columns: 1fr; gap: 20px; }
 }
 
 @media (max-width: 760px) {
@@ -380,6 +386,7 @@ textarea { resize: vertical; }
   .tiers { grid-template-columns: 1fr; }
   .tier { border-left: 0; border-top: 1px solid var(--line); padding: 24px 20px; }
   .tier-top { grid-template-columns: 1fr; gap: 20px; padding: 28px 20px; border-top: 0; }
+  .tier-extra { grid-template-columns: 1fr; gap: 16px; padding: 24px 20px; }
   .steps li, .steps li + li { padding: 24px 0; border-left: 0; border-bottom: 1px solid var(--line); }
   .grid { grid-template-columns: 1fr; }
   .booking { padding: 20px; }

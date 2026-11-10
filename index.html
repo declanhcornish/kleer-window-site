@@ -39,11 +39,12 @@
     }],
     "hasOfferCatalog": {
       "@type": "OfferCatalog",
-      "name": "Window cleaning packages",
+      "name": "Window and gutter cleaning",
       "itemListElement": [
         { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Full window cleaning", "description": "Glass and frames inside and outside, sills, and screens." } },
         { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Standard window cleaning", "description": "Outside glass and frames, plus screens." } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Basic window cleaning", "description": "Outside glass only." } }
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Basic window cleaning", "description": "Outside glass only." } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Gutter cleaning", "description": "Leaves and debris cleared out of the gutters." } }
       ]
     }
   }
@@ -53,7 +54,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
   <link rel="preload" as="image" href="assets/media/hero-poster.jpg">
-  <link rel="stylesheet" href="assets/styles.css?v=20261110b">
+  <link rel="stylesheet" href="assets/styles.css?v=20261110c">
 </head>
 <body>
   <header class="nav" id="nav">
@@ -161,6 +162,21 @@
               <button class="link tier-book" type="button" data-tier="Basic">Or book a time</button>
             </div>
           </article>
+
+          <article class="tier tier-extra">
+            <div class="tier-head">
+              <p class="mono">Its own service</p>
+              <h3>Gutter cleaning</h3>
+              <p class="tier-sum">A separate visit from your window cleaning.</p>
+            </div>
+            <ul class="tier-list">
+              <li>Leaves and debris cleared out of your gutters</li>
+            </ul>
+            <div class="tier-actions">
+              <button class="tier-btn tier-btn-line" type="button" data-quote="Gutters">Get your quote now</button>
+              <button class="link tier-book" type="button" data-tier="Gutters">Or book a time</button>
+            </div>
+          </article>
         </div>
       </div>
     </section>
@@ -204,6 +220,7 @@
             <label class="pill"><input type="radio" name="service" value="Full" required> Full</label>
             <label class="pill"><input type="radio" name="service" value="Standard"> Standard</label>
             <label class="pill"><input type="radio" name="service" value="Basic"> Basic</label>
+            <label class="pill"><input type="radio" name="service" value="Gutters"> Gutter cleaning</label>
             <a class="link pkg-link" href="#services">Compare packages</a>
           </fieldset>
 
@@ -311,6 +328,7 @@
         <label class="pill"><input type="radio" name="service" value="Full"> Full</label>
         <label class="pill"><input type="radio" name="service" value="Standard"> Standard</label>
         <label class="pill"><input type="radio" name="service" value="Basic"> Basic</label>
+        <label class="pill"><input type="radio" name="service" value="Gutters"> Gutter cleaning</label>
       </fieldset>
 
       <div class="grid">
@@ -351,10 +369,10 @@
     </div>
   </footer>
 
-  <script src="assets/nav.js?v=20261110b"></script>
-  <script src="assets/config.js?v=20261110b"></script>
-  <script src="assets/hero.js?v=20261110b"></script>
-  <script src="assets/app.js?v=20261110b"></script>
-  <script src="assets/quote.js?v=20261110b"></script>
+  <script src="assets/nav.js?v=20261110c"></script>
+  <script src="assets/config.js?v=20261110c"></script>
+  <script src="assets/hero.js?v=20261110c"></script>
+  <script src="assets/app.js?v=20261110c"></script>
+  <script src="assets/quote.js?v=20261110c"></script>
 </body>
 </html>
