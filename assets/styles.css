@@ -130,7 +130,7 @@ h2 { margin: 0; font-size: clamp(40px, 6vw, 80px); line-height: .9; font-weight:
 .row h3 { margin: 0; font-size: clamp(28px, 3.6vw, 44px); line-height: 1; font-weight: 800; text-transform: uppercase; font-variation-settings: 'wdth' 85; }
 .row p { margin: 0; color: var(--ink-2); font-size: 18px; max-width: 420px; }
 
-.tiers { display: grid; grid-template-columns: repeat(4, 1fr); border: 1px solid var(--line); }
+.tiers { display: grid; grid-template-columns: repeat(2, 1fr); border: 1px solid var(--line); }
 .tier { display: flex; flex-direction: column; padding: 28px 24px; border-left: 1px solid var(--line); }
 .tier:nth-child(2) { border-left: 0; }
 .tier h3 { margin: 0 0 8px; font-size: clamp(30px, 3vw, 40px); line-height: 1; font-weight: 900; text-transform: uppercase; font-variation-settings: 'wdth' 75; }
@@ -355,9 +355,6 @@ textarea { resize: vertical; }
   .contact-grid { grid-template-columns: 1fr 1fr; }
   .contact-who { grid-column: 1 / -1; border-bottom: 1px solid var(--line); }
   .contact-card:first-of-type { border-left: 0; }
-  .tiers { grid-template-columns: 1fr 1fr; }
-  .tier:nth-child(4) { border-left: 0; }
-  .tier:nth-child(n+4) { border-top: 1px solid var(--line); }
   .tier-top { grid-template-columns: 1fr; gap: 24px; }
 }
 

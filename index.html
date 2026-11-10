@@ -41,11 +41,9 @@
       "@type": "OfferCatalog",
       "name": "Window cleaning packages",
       "itemListElement": [
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Platinum window cleaning", "description": "Everything in Gold, plus paint and overspray scraped off the glass and a deionized water rinse." } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Gold window cleaning", "description": "Everything in Silver, plus screens and window tracks." } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Silver window cleaning", "description": "Everything in Bronze, plus frames and sills." } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Bronze window cleaning", "description": "Glass cleaned inside and outside." } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Basic window cleaning", "description": "Outside glass only." } }
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Full window cleaning", "description": "Glass and frames inside and outside, sills, and screens." } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Standard window cleaning", "description": "Glass inside and outside, plus outside frames, sills, and screens." } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Basic window cleaning", "description": "Glass cleaned inside and outside." } }
       ]
     }
   }
@@ -55,7 +53,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
   <link rel="preload" as="image" href="assets/media/hero-poster.jpg">
-  <link rel="stylesheet" href="assets/styles.css?v=20261109a">
+  <link rel="stylesheet" href="assets/styles.css?v=20261110a">
 </head>
 <body>
   <header class="nav" id="nav">
@@ -123,65 +121,41 @@
           <article class="tier tier-top">
             <div class="tier-head">
               <p class="mono">Most thorough</p>
-              <h3>Platinum</h3>
-              <p class="tier-sum">Glass with nothing left on it. Everything in Gold, plus:</p>
+              <h3>Full</h3>
+              <p class="tier-sum">Inside and out, top to bottom.</p>
             </div>
-            <ul class="tier-list">
-              <li>Paint and overspray taken off the glass with a glass scraper</li>
-              <li>Scraped pane by pane until nothing is left stuck to the glass</li>
-              <li>Final rinse with deionized water, pure water that dries without spots</li>
-            </ul>
-            <div class="tier-actions">
-              <button class="btn tier-btn" type="button" data-quote="Platinum">Get your quote now <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
-              <button class="link tier-book" type="button" data-tier="Platinum">Or book a time</button>
-            </div>
-          </article>
-
-          <article class="tier">
-            <h3>Gold</h3>
-            <p class="tier-sum">Everything in Silver, plus:</p>
-            <ul class="tier-list">
-              <li>Screens taken out and cleaned</li>
-              <li>Window tracks vacuumed and wiped</li>
-            </ul>
-            <div class="tier-actions">
-              <button class="tier-btn tier-btn-line" type="button" data-quote="Gold">Get your quote now</button>
-              <button class="link tier-book" type="button" data-tier="Gold">Or book a time</button>
-            </div>
-          </article>
-
-          <article class="tier">
-            <h3>Silver</h3>
-            <p class="tier-sum">Everything in Bronze, plus:</p>
-            <ul class="tier-list">
-              <li>Frames wiped down</li>
-              <li>Sills cleaned out</li>
-            </ul>
-            <div class="tier-actions">
-              <button class="tier-btn tier-btn-line" type="button" data-quote="Silver">Get your quote now</button>
-              <button class="link tier-book" type="button" data-tier="Silver">Or book a time</button>
-            </div>
-          </article>
-
-          <article class="tier">
-            <h3>Bronze</h3>
-            <p class="tier-sum">Both sides of the glass.</p>
             <ul class="tier-list">
               <li>Glass cleaned inside and outside</li>
-              <li>Someone needs to be home to let us in</li>
+              <li>Frames wiped down inside and outside</li>
+              <li>Sills cleaned out</li>
+              <li>Screens taken out and cleaned</li>
             </ul>
             <div class="tier-actions">
-              <button class="tier-btn tier-btn-line" type="button" data-quote="Bronze">Get your quote now</button>
-              <button class="link tier-book" type="button" data-tier="Bronze">Or book a time</button>
+              <button class="btn tier-btn" type="button" data-quote="Full">Get your quote now <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+              <button class="link tier-book" type="button" data-tier="Full">Or book a time</button>
+            </div>
+          </article>
+
+          <article class="tier">
+            <h3>Standard</h3>
+            <p class="tier-sum">The glass, plus the outside detail.</p>
+            <ul class="tier-list">
+              <li>Glass cleaned inside and outside</li>
+              <li>Outside frames wiped down</li>
+              <li>Sills cleaned out</li>
+              <li>Screens taken out and cleaned</li>
+            </ul>
+            <div class="tier-actions">
+              <button class="tier-btn tier-btn-line" type="button" data-quote="Standard">Get your quote now</button>
+              <button class="link tier-book" type="button" data-tier="Standard">Or book a time</button>
             </div>
           </article>
 
           <article class="tier">
             <h3>Basic</h3>
-            <p class="tier-sum">Outside glass only.</p>
+            <p class="tier-sum">Just the windows.</p>
             <ul class="tier-list">
-              <li>Every exterior pane cleaned</li>
-              <li>Nobody needs to be home</li>
+              <li>Glass cleaned inside and outside</li>
             </ul>
             <div class="tier-actions">
               <button class="tier-btn tier-btn-line" type="button" data-quote="Basic">Get your quote now</button>
@@ -228,10 +202,8 @@
 
           <fieldset class="services">
             <legend>Package</legend>
-            <label class="pill"><input type="radio" name="service" value="Platinum" required> Platinum</label>
-            <label class="pill"><input type="radio" name="service" value="Gold"> Gold</label>
-            <label class="pill"><input type="radio" name="service" value="Silver"> Silver</label>
-            <label class="pill"><input type="radio" name="service" value="Bronze"> Bronze</label>
+            <label class="pill"><input type="radio" name="service" value="Full" required> Full</label>
+            <label class="pill"><input type="radio" name="service" value="Standard"> Standard</label>
             <label class="pill"><input type="radio" name="service" value="Basic"> Basic</label>
             <a class="link pkg-link" href="#services">Compare packages</a>
           </fieldset>
@@ -269,11 +241,11 @@
         <div class="faq-list">
           <details>
             <summary>What's the difference between the packages?</summary>
-            <p>Each one builds on the one below it. Basic is outside glass only. Bronze is glass inside and outside. Silver adds frames and sills. Gold adds screens and window tracks. Platinum adds scraping paint and overspray off the glass and a deionized water rinse.</p>
+            <p>Basic is just the windows: the glass, inside and outside. Standard adds the outside frames, the sills, and the screens. Full does all of that plus the inside frames, so the whole window is done inside and out.</p>
           </details>
           <details>
             <summary>Do I need to be home?</summary>
-            <p>Only if we're cleaning inside. Basic is outside only, so nobody needs to be home. Bronze, Silver, Gold, and Platinum all include inside glass, so someone needs to be there to let us in.</p>
+            <p>Yes. Every package includes the inside of the glass, so someone needs to be there to let us in.</p>
           </details>
           <details>
             <summary>How much does it cost?</summary>
@@ -289,11 +261,7 @@
           </details>
           <details>
             <summary>How do I change or cancel?</summary>
-            <p>Call or text Declan at <a class="link" href="tel:+15177592607">517-759-2607</a>, or just reply to your confirmation email.</p>
-          </details>
-          <details>
-            <summary>What is deionized water?</summary>
-            <p>Water with the minerals taken out. Regular tap water leaves spots when it dries; deionized water doesn't. It's the final rinse in our Platinum package.</p>
+            <p>Use the link in your confirmation email, or sign in to <a class="link" href="account.html">your account</a>, and tap "Change the time" or "Cancel this visit." You can do it online up to 16 hours before your visit. After that, call or text Declan at <a class="link" href="tel:+15177592607">517-759-2607</a>.</p>
           </details>
         </div>
       </div>
@@ -341,10 +309,8 @@
 
       <fieldset class="services">
         <legend>Package</legend>
-        <label class="pill"><input type="radio" name="service" value="Platinum"> Platinum</label>
-        <label class="pill"><input type="radio" name="service" value="Gold"> Gold</label>
-        <label class="pill"><input type="radio" name="service" value="Silver"> Silver</label>
-        <label class="pill"><input type="radio" name="service" value="Bronze"> Bronze</label>
+        <label class="pill"><input type="radio" name="service" value="Full"> Full</label>
+        <label class="pill"><input type="radio" name="service" value="Standard"> Standard</label>
         <label class="pill"><input type="radio" name="service" value="Basic"> Basic</label>
       </fieldset>
 
@@ -386,10 +352,10 @@
     </div>
   </footer>
 
-  <script src="assets/nav.js?v=20261109a"></script>
-  <script src="assets/config.js?v=20261109a"></script>
-  <script src="assets/hero.js?v=20261109a"></script>
-  <script src="assets/app.js?v=20261109a"></script>
-  <script src="assets/quote.js?v=20261109a"></script>
+  <script src="assets/nav.js?v=20261110a"></script>
+  <script src="assets/config.js?v=20261110a"></script>
+  <script src="assets/hero.js?v=20261110a"></script>
+  <script src="assets/app.js?v=20261110a"></script>
+  <script src="assets/quote.js?v=20261110a"></script>
 </body>
 </html>

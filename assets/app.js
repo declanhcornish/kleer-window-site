@@ -132,7 +132,7 @@
     });
   } catch (e) {}
 
-  // "Book Gold" etc. preselect that package and jump to the schedule.
+  // "Or book a time" on a package preselects that package and jump to the schedule.
   [].forEach.call(document.querySelectorAll('[data-tier]'), function (btn) {
     btn.addEventListener('click', function () {
       var radio = form.querySelector('input[name="service"][value="' + btn.getAttribute('data-tier') + '"]');
