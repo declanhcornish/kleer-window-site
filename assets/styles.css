@@ -437,12 +437,17 @@ textarea { resize: vertical; }
 }
 
 /* Reviews */
-.review-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+.review-track { animation-duration: 45s; }
+.review-track .review { flex: 0 0 auto; width: clamp(280px, 30vw, 400px); }
 .review { margin: 0; padding: 28px 24px; border: 1px solid var(--line); background: var(--bg-2); display: flex; flex-direction: column; justify-content: space-between; gap: 20px; }
 .review blockquote { margin: 0; font-size: 19px; line-height: 1.5; }
 .review figcaption { font-size: 17px; }
-@media (max-width: 1000px) {
-  .review-grid { grid-template-columns: 1fr; max-width: 640px; gap: 16px; }
+@media (max-width: 760px) {
+  .review-track { animation-duration: 35s; }
+  .review-track .review { width: 78vw; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .review-track { animation-duration: 80s; }
 }
 .review .stars { display: flex; gap: 4px; margin-bottom: -6px; }
 .review .stars svg { width: 20px; height: 20px; fill: #f5b301; }
