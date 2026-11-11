@@ -420,7 +420,7 @@ textarea { resize: vertical; }
 /* Our work: before and after, moving strip */
 .work-sub { margin: -8px 0 28px; }
 .work-marquee { overflow: hidden; -webkit-mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent); mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent); }
-.work-track { display: flex; gap: 24px; width: max-content; padding-right: 24px; animation: work-slide 60s linear infinite; will-change: transform; }
+.work-track { display: flex; gap: 24px; width: max-content; padding-right: 24px; animation: work-slide 80s linear infinite; will-change: transform; }
 .work-marquee:hover .work-track, .work-marquee:focus-within .work-track { animation-play-state: paused; }
 @keyframes work-slide { from { transform: translate3d(-50%, 0, 0); } to { transform: translate3d(0, 0, 0); } }
 .work-card { flex: 0 0 auto; width: clamp(280px, 42vw, 540px); margin: 0; border: 1px solid var(--line); background: var(--bg-2); }
@@ -429,11 +429,11 @@ textarea { resize: vertical; }
 .work-card figcaption { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; padding: 16px 18px; border-top: 1px solid var(--line); }
 .work-card .mono { margin: 0; text-align: right; }
 @media (max-width: 760px) {
-  .work-track { gap: 16px; padding-right: 16px; animation-duration: 45s; }
+  .work-track { gap: 16px; padding-right: 16px; animation-duration: 60s; }
   .work-card { width: 78vw; }
 }
 @media (prefers-reduced-motion: reduce) {
-  .work-track { animation-duration: 100s; }
+  .work-track { animation-duration: 135s; }
 }
 
 /* Reviews */
