@@ -416,3 +416,26 @@ textarea { resize: vertical; }
 @media (max-width: 520px) {
   .team-grid { grid-template-columns: 1fr; gap: 16px; }
 }
+
+/* Our work: before and after */
+.work-sub { margin: -8px 0 28px; }
+.work-grid { display: grid; grid-template-columns: 1fr; gap: 28px; max-width: 960px; }
+.work-card { margin: 0; border: 1px solid var(--line); background: var(--bg-2); }
+.work-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; background: var(--line); }
+.work-pair img { display: block; width: 100%; height: auto; aspect-ratio: 3 / 4; object-fit: cover; }
+.work-card figcaption { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; padding: 16px 18px; border-top: 1px solid var(--line); }
+.work-card .mono { margin: 0; text-align: right; }
+@media (max-width: 760px) {
+  .work-grid { gap: 16px; }
+}
+
+/* Reviews */
+.review-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+.review { margin: 0; padding: 28px 24px; border: 1px solid var(--line); background: var(--bg-2); display: flex; flex-direction: column; justify-content: space-between; gap: 20px; }
+.review blockquote { margin: 0; font-size: 19px; line-height: 1.5; }
+.review figcaption { font-size: 17px; }
+@media (max-width: 1000px) {
+  .review-grid { grid-template-columns: 1fr; max-width: 640px; gap: 16px; }
+}
+.review .stars { display: flex; gap: 4px; margin-bottom: -6px; }
+.review .stars svg { width: 20px; height: 20px; fill: #f5b301; }
