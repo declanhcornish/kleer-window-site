@@ -451,3 +451,19 @@ textarea { resize: vertical; }
 }
 .review .stars { display: flex; gap: 4px; margin-bottom: -6px; }
 .review .stars svg { width: 20px; height: 20px; fill: #f5b301; }
+
+/* Our work: tap to enlarge */
+.work-track:not(.review-track) .work-card { cursor: zoom-in; }
+.work-card:focus-visible { outline: 3px solid #f1f2f4; outline-offset: 3px; }
+.no-scroll { overflow: hidden; }
+.work-view { width: 100vw; height: 100dvh; max-width: none; max-height: none; margin: 0; padding: 64px 24px 24px; border: 0; background: rgba(10, 11, 12, 0.94); color: #f1f2f4; overflow-y: auto; }
+.work-view::backdrop { background: rgba(10, 11, 12, 0.6); }
+.work-view-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; max-width: min(1100px, calc((100dvh - 150px) * 1.5)); margin: 0 auto; }
+.work-view-pair img { display: block; width: 100%; height: auto; aspect-ratio: 3 / 4; object-fit: cover; }
+.work-view-cap { text-align: center; font-weight: 800; font-size: 20px; margin: 16px 0 0; }
+.work-view-close { position: fixed; top: 14px; right: 16px; display: inline-flex; align-items: center; gap: 8px; min-height: 48px; padding: 0 18px; font: inherit; font-size: 16px; font-weight: 700; color: #161719; background: #f1f2f4; border: 0; border-radius: 6px; cursor: pointer; z-index: 2; }
+.work-view-close svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 2.5; stroke-linecap: round; }
+@media (max-width: 760px) {
+  .work-view { padding: 76px 16px 24px; }
+  .work-view-pair { grid-template-columns: 1fr; max-width: 520px; gap: 12px; }
+}
