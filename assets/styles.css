@@ -467,3 +467,8 @@ textarea { resize: vertical; }
   .work-view { padding: 76px 16px 24px; }
   .work-view-pair { grid-template-columns: 1fr; max-width: 520px; gap: 12px; }
 }
+
+/* Hero trust line */
+.hero-trust { list-style: none; margin: 14px 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 10px 24px; font-size: 17px; font-weight: 600; }
+.hero-trust li { display: inline-flex; align-items: center; gap: 8px; }
+.hero-trust svg { width: 22px; height: 22px; flex: 0 0 auto; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
