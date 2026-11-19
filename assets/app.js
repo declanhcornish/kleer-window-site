@@ -49,7 +49,7 @@
         }
         render();
       })
-      .catch(function () { state('The schedule could not load. Refresh the page to try again.'); });
+      .catch(function () { state('The schedule could not load. To book, call or text Declan at 517-759-2607.'); });
   }
 
   // When the first bookable day is more than a week out, say so up front.
